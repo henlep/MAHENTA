@@ -1,5 +1,5 @@
 {
-  "name": "mahenta",
+  "name": "MahentaFront",
   "type": "project:application",
   "bundler": {
     "id": "cli",
@@ -46,8 +46,8 @@
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",
           "aurelia-event-aggregator",
-          "aurelia-fetch-client"
           "aurelia-framework",
+          "aurelia-fetch-client",
           "aurelia-history",
           "aurelia-history-browser",
           "aurelia-loader",
