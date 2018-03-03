@@ -8,7 +8,8 @@ export class App {
         config.title = "MAHENTA";
         config.map([
            {route: ['', 'home'], name:'home', moduleId: 'home/index' },
-            {route:'movies', name:'movies', moduleId:'movies/home', nav: true}
+            {route:'movies', name:'movies', moduleId:'movies/home', nav: true},
+          {route: 'sessions', name:'sessions', moduleId:'sessions/session', nav:true}
             
         ]);
     }

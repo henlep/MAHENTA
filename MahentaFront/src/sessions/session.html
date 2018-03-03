@@ -1,0 +1,26 @@
+<template>
+  <h1>Tere ${message}</h1>
+  <router-view></router-view>
+  <div class="container">
+    <h2>Lisa filmi:</h2>
+    <form>
+      <div class="form-group">
+        <label for="MovieTitle">Movie Title</label>
+        <textarea class="form-control" rows="1" id="MovieTitle"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="CinemaHall">Cinema Hall:</label>
+        <textarea class="form-control" rows="5" id="CinemaHall"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="Cinema">Cinema</label>
+        <textarea class="form-control" id="Cinema"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="FreeSeats">FreeSeats</label>
+        <textarea class="form-control" id="FreeSeats"></textarea>
+      </div>
+    </form>
+  </div>
+
+</template>
