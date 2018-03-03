@@ -2,24 +2,29 @@
   <h1>Tere ${message}</h1>
   <router-view></router-view>
   <div class="container">
-    <h2>Lisa filmi:</h2>
-    <form>
+    <h2>Lisa film:</h2>
+    <form id="SessionForm" submit.delegate="addSession()">
+
       <div class="form-group">
         <label for="MovieTitle">Movie Title</label>
-        <textarea class="form-control" rows="1" id="MovieTitle"></textarea>
+        <input id="MovieTitle" type="text" name="MovieTitle" value.bind="userData.MovieTitle">
       </div>
+
       <div class="form-group">
         <label for="CinemaHall">Cinema Hall:</label>
-        <textarea class="form-control" rows="5" id="CinemaHall"></textarea>
+        <input id="CinemaHall" type="text" name="CinemaHall" value.bind="userData.CinemaHall">
       </div>
+
       <div class="form-group">
         <label for="Cinema">Cinema</label>
-        <textarea class="form-control" id="Cinema"></textarea>
+        <input id="Cinema" type="text" name="Cinema" value.bind="userData.Cinema">
       </div>
+
       <div class="form-group">
         <label for="FreeSeats">FreeSeats</label>
-        <textarea class="form-control" id="FreeSeats"></textarea>
+        <input id="FreeSeats" type="number" name="FreeSeats" value.bind="userData.FreeSeats">
       </div>
+      <input type="submit" name="Lisa Film">
     </form>
   </div>
 
