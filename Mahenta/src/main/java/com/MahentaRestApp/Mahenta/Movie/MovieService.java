@@ -14,7 +14,13 @@ public class MovieService {
 
     List<Movie> getAllMovies() {
 
-        return movieRepository.getAllMovies();
+        return movieRepository.findAll();
     }
 
+
+    Movie addMovie(Movie movie) {
+        // here you can do some validations etc before saving the user
+
+        return movieRepository.save(movie);
+    }
 }

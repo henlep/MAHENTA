@@ -12,8 +12,9 @@ import java.util.List;
 public class SessionController {
 
     @Resource
-    private SessionController sessionController;
-    public SessionController(SessionService userService) {
+    private SessionService sessionService;
+
+    public SessionController(SessionService sessionService) {
         this.sessionService = sessionService;
     }
 

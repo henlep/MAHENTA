@@ -1,6 +1,7 @@
 package com.MahentaRestApp.Mahenta.Movie;
 
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +25,10 @@ public class MovieController {
         return list;
     }
 
-    @RequestMapping(value="/see", method= RequestMethod.GET)
-    public String Test() {
-        return "Test";
+    @RequestMapping(value="/movies/add", method=RequestMethod.POST,
+            consumes = "application/json")
+    public Movie addMovie(@RequestBody Movie movie) {
+        return movieService.addMovie(movie);
     }
 
 
