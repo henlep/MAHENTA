@@ -1,10 +1,7 @@
 package com.MahentaRestApp.Mahenta.Movie;
 
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -31,5 +28,9 @@ public class MovieController {
         return movieService.addMovie(movie);
     }
 
+    @RequestMapping(value = "/movies/{id}", method=RequestMethod.GET)
+    public Movie getMovie(@PathVariable("id") long movieId) {
+        return movieService.getMovieById(movieId);
+    }
 
 }

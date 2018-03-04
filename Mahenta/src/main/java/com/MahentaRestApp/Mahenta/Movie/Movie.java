@@ -2,10 +2,10 @@ package com.MahentaRestApp.Mahenta.Movie;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.MahentaRestApp.Mahenta.Session.Session;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Movie {
@@ -16,4 +16,7 @@ public class Movie {
     public String Title;
     public String Description;
     public int Year;
+
+
+    
 }

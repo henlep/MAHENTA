@@ -1,5 +1,7 @@
 package com.MahentaRestApp.Mahenta.Session;
 
+import com.MahentaRestApp.Mahenta.Movie.Movie;
+import com.MahentaRestApp.Mahenta.Movie.MovieService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +16,11 @@ public class SessionService {
 
     List<Session> getAllSessions() {
 
-        return sessionRepository.getAllSessions();
+        return sessionRepository.findAll();
     }
 
+    Session addSession(Session session){
+
+        return sessionRepository.save(session);
+    }
 }
