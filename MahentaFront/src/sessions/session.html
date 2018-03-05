@@ -1,11 +1,16 @@
 <template>
   <div class="container">
     <h2>Lisa seanss:</h2>
+      
+      
     <form id="SessionForm" submit.delegate="addSession()">
 
       <div class="form-group">
-        <label for="MovieTitle">Movie Title</label>
-        <input id="MovieTitle" type="text" name="MovieTitle" value.bind="sessionData.MovieTitle">
+        <label for="movie_id">Movie Title</label>
+        <select name="movie_id" value.bind="sessionData.movie_id">
+            <option value="${movie.id}" repeat.for="movie of movieList">${movie.Title}</option>
+          </select>
+          
       </div>
 
       <div class="form-group">
