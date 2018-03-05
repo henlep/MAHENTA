@@ -1,4 +1,3 @@
-import 'bootstrap'
 import {HttpClient, json} from 'aurelia-fetch-client'
 
 export class session{
@@ -16,9 +15,9 @@ export class session{
     })
       .then(response => response.json())
       .then(data =>{
-        console.log("saadeti" + data.MovieTitle);
+        console.log("Server saatis" + data.MovieTitle);
       });
-    console.log("method execute")
+    console.log("method executed")
   }
 
 }

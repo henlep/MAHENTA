@@ -38,5 +38,9 @@ public class SessionController {
         return sessionService.addSession(session);
     }
 
+    @RequestMapping(value = "//{id}", method=RequestMethod.GET)
+    public Movie getMovie(@PathVariable("id") long movieId) {
+        return movieService.getMovieById(movieId);
+    }
 
 }
