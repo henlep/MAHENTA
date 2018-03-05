@@ -1,0 +1,10 @@
+<template>
+ADDMOVIE
+    
+    <form id="movieform" submit.delegate="addMovie()">
+		<div><label for="Title">Pealkiri</label><input id="Title" type="text" name="Title" value.bind="movieData.Title"></div>
+		<div><label for="Description">Kirjeldus</label><input id="Description" type="text" name="Description" value.bind="movieData.Description"></div>
+		<div><label for="Year">Aasta</label><input id="Year" type="number" name="Year" value.bind="movieData.Year"></div>
+		<input type="submit" name="Lisa Film">
+	</form>
+</template>
