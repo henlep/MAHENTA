@@ -1,3 +1,15 @@
+task myTask {
+  
+        ext.myMahenta = "mahenta123"
+   
+    
+}
+task printMahenta{
+    doLast{
+        println myTask.myMahenta
+    }
+}
+
 buildscript {
 	ext {
 		springBootVersion = '1.5.10.RELEASE'

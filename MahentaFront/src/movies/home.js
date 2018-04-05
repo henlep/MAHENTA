@@ -1,5 +1,6 @@
 import 'bootstrap';
 import {HttpClient} from 'aurelia-fetch-client'
+import environment from '../environment'
 
 export class Home {
 
@@ -7,7 +8,7 @@ export class Home {
     
      activate(){
          let client = new HttpClient();
-       client.fetch('http://localhost:8080/movies')
+       client.fetch(environment.baseUrl+'/movies')
 	 		.then(response => response.json())
 	 		.then(movies => this.movieList = movies);
      }
