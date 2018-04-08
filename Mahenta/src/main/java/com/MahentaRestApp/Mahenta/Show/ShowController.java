@@ -1,5 +1,6 @@
 package com.MahentaRestApp.Mahenta.Show;
 
+import com.MahentaRestApp.Mahenta.XMLParser.ShowXmlParser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,13 @@ public class ShowController {
 
     public ShowController(ShowService showService) {
         this.showService = showService;
+    }
+
+    @RequestMapping(value="/shows", method= RequestMethod.GET)
+    public List<Show> getAllShows() throws IOException, SAXException, ParserConfigurationException {
+        ShowXmlParser showXmlParser = new ShowXmlParser();
+        List<Show> list = showXmlParser.GetItems();
+        return list;
     }
 
 
