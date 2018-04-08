@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 import javax.annotation.Resource;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.sql.*;
 import java.util.List;
 
 @RestController
@@ -23,11 +24,15 @@ public class ShowController {
 
     @RequestMapping(value="/shows", method= RequestMethod.GET)
     public List<Show> getAllShows() throws IOException, SAXException, ParserConfigurationException {
-        ShowXmlParser showXmlParser = new ShowXmlParser();
-        List<Show> list = showXmlParser.GetItems();
+      ShowXmlParser showXmlParser = new ShowXmlParser();
+       List<Show> list = showXmlParser.GetItems();
         return list;
     }
-
+    @RequestMapping(value="/database", method= RequestMethod.GET)
+    public List<Show> getAllShowsFromDb() {
+        List<Show> list = showService.getAllShowsFromDb();
+        return list;
+    }
 
     //ARa seda järgnevat lisa
       @RequestMapping(value="/updateShows")
