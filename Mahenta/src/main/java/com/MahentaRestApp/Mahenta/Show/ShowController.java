@@ -1,6 +1,5 @@
 package com.MahentaRestApp.Mahenta.Show;
 
-import com.MahentaRestApp.Mahenta.Utilites.SessionsXMLParser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +32,5 @@ public class ShowController {
       //  }
       //  return shows.get(0);
   //  }
-    ///proov
+
 }
