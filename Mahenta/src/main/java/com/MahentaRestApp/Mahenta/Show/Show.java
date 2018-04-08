@@ -7,7 +7,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity(name = "shows_table")
 public class Show {
@@ -17,7 +19,8 @@ public class Show {
     public String Title;
     public String Cinema;
     public String Hall;
-    public LocalDateTime ShowStart;
+    public LocalDate showDate;
+    public LocalTime showTime;
     public String ImgUrl;
 
 }

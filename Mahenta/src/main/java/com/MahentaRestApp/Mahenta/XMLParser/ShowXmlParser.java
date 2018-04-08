@@ -11,7 +11,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -57,7 +56,9 @@ public class ShowXmlParser {
             show.Cinema = element.getElementsByTagName("Theatre").item(0).getTextContent();
             show.Hall = element.getElementsByTagName("TheatreAuditorium").item(0).getTextContent();
             DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-            show.ShowStart = LocalDateTime.parse(element.getElementsByTagName("dttmShowStart").item(0).getTextContent(), formatter);
+            show.showDate = LocalDateTime.parse(element.getElementsByTagName("dttmShowStart").item(0).getTextContent(), formatter).toLocalDate();
+            show.showTime = LocalDateTime.parse(element.getElementsByTagName("dttmShowStart").item(0).getTextContent(), formatter).toLocalTime();
+
             show.ImgUrl = images.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
 
 
