@@ -30,15 +30,15 @@ public class ShowController {
 
 
     //ARa seda järgnevat lisa
- //   @RequestMapping(value="/updateShows")
-   // public Show UpdateShows() throws IOException, SAXException, ParserConfigurationException {
-    //    Show show = new Show();
-     //   SessionsXMLParser sessionsXMLParser = new SessionsXMLParser();
-     //   List<Show> shows = sessionsXMLParser.GetItems();
-      //  for (int i = 0; i<shows.size(); i++){
-       //     show = showService.addShow(shows.get(i));
-      //  }
-      //  return shows.get(0);
+      @RequestMapping(value="/updateShows")
+       public Show UpdateShows() throws IOException, SAXException, ParserConfigurationException {
+       Show show = new Show();
+       ShowXmlParser sessionsXMLParser = new ShowXmlParser();
+       List<Show> shows = sessionsXMLParser.GetItems();
+        for (int i = 0; i<shows.size(); i++){
+            show = showService.addShow(shows.get(i));
+       }
+        return shows.get(0);
 
 
-}
+}}

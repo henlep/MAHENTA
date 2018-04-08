@@ -28,14 +28,18 @@ public class ShowXmlParser {
 
         DateTimeFormatter todayFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         String todayString = today.format(todayFormatter);
-        String url = "https://www.forumcinemas.ee/xml/Schedule/?area=1008&dt="+todayString;
-        //https://www.apollokino.ee/xml/Schedule/?area=1004&dt=03.04.2018
+        List<String> UrlList = new ArrayList<>();
+        UrlList.add("https://www.forumcinemas.ee/xml/Schedule/?area=1008&dt="+todayString);
+        UrlList.add("https://www.apollokino.ee/xml/Schedule/?area=1004&dt="+todayString);
+        //String url = "https://www.forumcinemas.ee/xml/Schedule/?area=1008&dt="+todayString;
+        //03.04.2018
+
 
         List<Show> list = new ArrayList<>();
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-
+        for (String url:UrlList){
         DocumentBuilder parser = factory.newDocumentBuilder();
 
         Document document = parser.parse(new URL(url).openStream());
@@ -61,7 +65,7 @@ public class ShowXmlParser {
             list.add(show);
 
         }
-
+        }
         return list;
     }
 
