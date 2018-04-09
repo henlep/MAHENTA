@@ -18,39 +18,35 @@ export class Home {
         var dateS = today.substring(0,10);
         this.minDate=dateS
         
-        var maxDay = new Date();
-        
+        var maxDay = new Date();        
         maxDay = new Date(maxDay.getTime()+(2*24*60*60*1000)).toISOString();
         var maxS = maxDay.substring(0,10);
-        console.log(maxS)
         this.maxDate = maxS;
         
         
         let client = new HttpClient();
-        client.fetch('http://localhost:8080/showsDate?date='+dateS)
+        client.fetch('http://localhost:8080/getShowsOnDate?date='+dateS)
 			.then(response => response.json())
 			.then(shows => this.showList = shows);
         
-        client.fetch('http://localhost:8080/cinemas?date='+dateS)
+        client.fetch('http://localhost:8080/getCinemasOnDate?date='+dateS)
 			.then(response => response.json())
 			.then(cinemas => this.cinemaList = cinemas);     
         
         
      }
 
-    getMin(){
-        return "2018-04-08"
-    }
+    
 
     dateChanged(date){
         this.showList = [];
         this.cinemaList = [];
         let client = new HttpClient();
-        client.fetch('http://localhost:8080/showsDate?date='+date)
+        client.fetch('http://localhost:8080/getShowsOnDate?date='+date)
 			.then(response => response.json())
 			.then(shows => this.showList = shows);
         
-        client.fetch('http://localhost:8080/cinemas?date='+date)
+        client.fetch('http://localhost:8080/getCinemasOnDate?date='+date)
 			.then(response => response.json())
 			.then(cinemas => this.cinemaList = cinemas); 
     }
@@ -64,26 +60,18 @@ export class Home {
     this.searchTerm = "";
     }
     
-	constructor() {
-        
-        
-		
-        
+	constructor() {  
         
         
 	}
 
-    filterFunc(searchExpression, value){
-     
+    filterFunc(searchExpression, value){     
      let itemValue = value.Title;
      let matches;
-     if(!searchExpression || !itemValue) return false;    
-        
-     matches = itemValue.toUpperCase().indexOf(searchExpression.toUpperCase()) !== -1 ;
-      
+     if(!searchExpression || !itemValue) return false;            
+     matches = itemValue.toUpperCase().indexOf(searchExpression.toUpperCase()) !== -1 ;    
     
-     return matches
-     
+     return matches     
   }
 
    

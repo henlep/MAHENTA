@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,27 +25,18 @@ public class ShowController {
         this.showService = showService;
     }
 
-    @RequestMapping(value="/shows", method= RequestMethod.GET)
-    public List<Show> getAllShows() throws IOException, SAXException, ParserConfigurationException {
-      ShowXmlParser showXmlParser = new ShowXmlParser();
-       List<Show> list = showXmlParser.GetItems();
-        return list;
-    }
-    @RequestMapping(value="/database", method= RequestMethod.GET)
-    public List<Show> getAllShowsFromDb() {
-        List<Show> list = showService.getAllShowsFromDb();
-        return list;
-    }
+
+
 
 
     //localhost:8080/showsDate?date=2018-04-09
-    @RequestMapping(value="/showsDate", method= RequestMethod.GET)
+    @RequestMapping(value="/getShowsOnDate", method= RequestMethod.GET)
     public List<Show> getAllShowsFromDbWithDate(@RequestParam(value="date")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         List<Show> list = showService.getShowsOnDate(date);
         return list;
     }
 
-    @RequestMapping(value="/cinemas", method= RequestMethod.GET)
+    @RequestMapping(value="/getCinemasOnDate", method= RequestMethod.GET)
     public List<String> getAllCinemasWithDate(@RequestParam(value="date")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         List<String> list = showService.getCinemasOnDate(date);
         return list;
@@ -55,10 +48,29 @@ public class ShowController {
        public Show UpdateShows() throws IOException, SAXException, ParserConfigurationException {
        Show show = new Show();
        ShowXmlParser sessionsXMLParser = new ShowXmlParser();
-       List<Show> shows = sessionsXMLParser.GetItems();
+       List<String> datestrings = new ArrayList<>();
+
+        DateTimeFormatter todayFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate today = LocalDate.now();
+        String todayString = today.format(todayFormatter);
+        datestrings.add(todayString);
+        LocalDate DayTwo = today.plusDays(1);
+        datestrings.add(DayTwo.format(todayFormatter));
+        LocalDate DayThree = today.plusDays(2);
+        datestrings.add(DayThree.format(todayFormatter));
+
+        List<String> UrlList = new ArrayList<>();
+        for (String s : datestrings){
+            UrlList.add("https://www.forumcinemas.ee/xml/Schedule/?area=1008&dt="+s);
+            UrlList.add("https://www.apollokino.ee/xml/Schedule/?area=1004&dt="+s);
+        }
+
+        UrlList.add("https://kosmos.cinamonkino.com/xml/");
+
+       List<Show> shows = sessionsXMLParser.GetShowsFromUrls(UrlList);
         for (int i = 0; i<shows.size(); i++){
             show = showService.addShow(shows.get(i));
-       }
+        }
         return shows.get(0);
 
 

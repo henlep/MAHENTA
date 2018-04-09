@@ -16,7 +16,7 @@
       </div>
     
     <div>
-        <input value.bind="selectedDate" type="date" name="selectedDate" min="${minDate}"  max="${maxDate}" change.delegate="dateChanged(selectedDate)">
+        <input value.bind="selectedDate" value="${minDate}" type="date" name="selectedDate" min="${minDate}"  max="${maxDate}" change.delegate="dateChanged(selectedDate)">
     </div>
     
     <div class="album text-muted">
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="card" repeat.for="show of showList |filter:searchTerm:filterFunc |cinema:selectedCinema:filterFunc" onclick="window.open(${show.ImgUrl})">
                     <img data-src=${show.ImgUrl} alt="Card image cap" src="${show.ImgUrl}" > 
-                    <p class="card-text">${show.showTime}<br>${show.Title}<br>
+                    <p class="card-text">${show.showTimeString}<br>${show.Title}<br>
                     <br>${show.Cinema}
                     <br>${show.Hall}</p>
                     <a target="_blank" href="${show.ShowUrl}">link</a>

@@ -28,7 +28,6 @@ public class ShowService {
 
         List<Show> shows =  showRepository.findByShowDate(date);
         shows.sort(Comparator.comparing(Show::getShowTime));
-        for (Show i : shows){System.out.println(i.showTime);}
         return shows;
     }
 

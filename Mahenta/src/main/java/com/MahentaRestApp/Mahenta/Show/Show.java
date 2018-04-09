@@ -21,6 +21,7 @@ public class Show {
     public String Hall;
     public LocalDate showDate;
     public LocalTime showTime;
+    public String showTimeString;
     public String ImgUrl;
     public String ShowUrl;
 
