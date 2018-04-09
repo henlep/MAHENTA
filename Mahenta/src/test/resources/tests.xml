@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<Schedule xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PubDate>2018-04-09T00:00:00+03:00</PubDate>
+  <Shows>
+    <Show>
+      <ID>317025</ID>
+      <dtAccounting>2018-04-09T00:00:00</dtAccounting>
+      <dttmShowStart>2018-04-09T11:15:00</dttmShowStart>
+      <dttmShowStartUTC>2018-04-09T08:15:00Z</dttmShowStartUTC>
+      <dttmShowEnd>2018-04-09T12:59:00</dttmShowEnd>
+      <dttmShowEndUTC>2018-04-09T09:59:00Z</dttmShowEndUTC>
+      <ShowSalesStartTime>2000-01-01T00:00:00</ShowSalesStartTime>
+      <ShowSalesStartTimeUTC>2000-01-01T00:00:00Z</ShowSalesStartTimeUTC>
+      <ShowSalesEndTime>2018-04-09T10:45:00</ShowSalesEndTime>
+      <ShowSalesEndTimeUTC>2018-04-09T07:45:00Z</ShowSalesEndTimeUTC>
+      <ShowReservationStartTime>2000-01-01T00:00:00</ShowReservationStartTime>
+      <ShowReservationStartTimeUTC>2000-01-01T00:00:00Z</ShowReservationStartTimeUTC>
+      <ShowReservationEndTime>2018-04-08T11:15:00</ShowReservationEndTime>
+      <ShowReservationEndTimeUTC>2018-04-08T08:15:00Z</ShowReservationEndTimeUTC>
+      <EventID>301238</EventID>
+      <Title>Seltsimees laps</Title>
+      <OriginalTitle>Seltsimees laps</OriginalTitle>
+      <ProductionYear>2018</ProductionYear>
+      <LengthInMinutes>98</LengthInMinutes>
+      <dtLocalRelease>2018-03-23T00:00:00</dtLocalRelease>
+      <Rating>Alla 6 a. mittesoovitatav</Rating>
+      <RatingLabel>MS-6</RatingLabel>
+      <RatingImageUrl>https://media.forumcinemas.ee/images/rating_large_MS-6.png</RatingImageUrl>
+      <EventType>Movie</EventType>
+      <Genres>Draama, Kogupere</Genres>
+      <TheatreID>1001</TheatreID>
+      <TheatreAuditriumID>1005</TheatreAuditriumID>
+      <Theatre>Coca Cola Plaza</Theatre>
+      <TheatreAuditorium>Saal 3</TheatreAuditorium>
+      <TheatreAndAuditorium>Coca Cola Plaza, Saal 3</TheatreAndAuditorium>
+      <PresentationMethodAndLanguage>2D, Eesti keeles</PresentationMethodAndLanguage>
+      <PresentationMethod>2D</PresentationMethod>
+      <EventSeries />
+      <ShowURL>http://www.forumcinemas.ee/websales/show/317025/</ShowURL>
+      <EventURL>http://www.forumcinemas.ee/event/301238/title/seltsimees_laps/</EventURL>
+      <SpokenLanguage>
+        <Name>Eesti</Name>
+        <NameInLanguage>Eesti keeles</NameInLanguage>
+        <ISOTwoLetterCode>et</ISOTwoLetterCode>
+      </SpokenLanguage>
+      <SubtitleLanguage1>
+        <Name>Inglise</Name>
+        <NameInLanguage>Inglise keeles</NameInLanguage>
+        <ISOTwoLetterCode>en</ISOTwoLetterCode>
+      </SubtitleLanguage1>
+      <SubtitleLanguage2>
+        <Name>Vene</Name>
+        <NameInLanguage>Vene keeles</NameInLanguage>
+        <ISOTwoLetterCode>ru</ISOTwoLetterCode>
+      </SubtitleLanguage2>
+      <Images>
+        <EventMicroImagePortrait>http://media.forumcinemas.ee/1000/Event_8086/portrait_micro/Markus1.jpg</EventMicroImagePortrait>
+        <EventSmallImagePortrait>http://media.forumcinemas.ee/1000/Event_8086/portrait_small/Markus1.jpg</EventSmallImagePortrait>
+        <EventMediumImagePortrait>http://media.forumcinemas.ee/1000/Event_8086/portrait_medium/Markus1.jpg</EventMediumImagePortrait>
+        <EventLargeImagePortrait>http://media.forumcinemas.ee/1000/Event_8086/portrait_large/Markus1.jpg</EventLargeImagePortrait>
+        <EventSmallImageLandscape>http://media.forumcinemas.ee/1000/Event_8086/landscape_small/Sisupilt670x250.jpg</EventSmallImageLandscape>
+        <EventLargeImageLandscape>http://media.forumcinemas.ee/1000/Event_8086/landscape_large/Sisupilt670x250.jpg</EventLargeImageLandscape>
+      </Images>
+      <ContentDescriptors />
+    </Show>
+    <Show>
+      <ID>317026</ID>
+      <dtAccounting>2018-04-09T00:00:00</dtAccounting>
+      <dttmShowStart>2018-04-09T11:20:00</dttmShowStart>
+      <dttmShowStartUTC>2018-04-09T08:20:00Z</dttmShowStartUTC>
+      <dttmShowEnd>2018-04-09T12:39:00</dttmShowEnd>
+      <dttmShowEndUTC>2018-04-09T09:39:00Z</dttmShowEndUTC>
+      <ShowSalesStartTime>2000-01-01T00:00:00</ShowSalesStartTime>
+      <ShowSalesStartTimeUTC>2000-01-01T00:00:00Z</ShowSalesStartTimeUTC>
+      <ShowSalesEndTime>2018-04-09T10:50:00</ShowSalesEndTime>
+      <ShowSalesEndTimeUTC>2018-04-09T07:50:00Z</ShowSalesEndTimeUTC>
+      <ShowReservationStartTime>2000-01-01T00:00:00</ShowReservationStartTime>
+      <ShowReservationStartTimeUTC>2000-01-01T00:00:00Z</ShowReservationStartTimeUTC>
+      <ShowReservationEndTime>2018-04-08T11:20:00</ShowReservationEndTime>
+      <ShowReservationEndTimeUTC>2018-04-08T08:20:00Z</ShowReservationEndTimeUTC>
+      <EventID>301490</EventID>
+      <Title>Elias ja sügaviku saladus</Title>
+      <OriginalTitle>Elias og Storegaps Hemmelighet</OriginalTitle>
+      <ProductionYear>2017</ProductionYear>
+      <LengthInMinutes>73</LengthInMinutes>
+      <dtLocalRelease>2018-03-30T00:00:00</dtLocalRelease>
+      <Rating>Perefilm</Rating>
+      <RatingLabel>PERE</RatingLabel>
+      <RatingImageUrl>https://media.forumcinemas.ee/images/rating_large_PERE.png</RatingImageUrl>
+      <EventType>Movie</EventType>
+      <Genres>Animatsioon</Genres>
+      <TheatreID>1001</TheatreID>
+      <TheatreAuditriumID>1008</TheatreAuditriumID>
+      <Theatre>Coca Cola Plaza</Theatre>
+      <TheatreAuditorium>Saal 5</TheatreAuditorium>
+      <TheatreAndAuditorium>Coca Cola Plaza, Saal 5</TheatreAndAuditorium>
+      <PresentationMethodAndLanguage>2D, Eesti keeles</PresentationMethodAndLanguage>
+      <PresentationMethod>2D</PresentationMethod>
+      <EventSeries />
+      <ShowURL>http://www.forumcinemas.ee/websales/show/317026/</ShowURL>
+      <EventURL>http://www.forumcinemas.ee/event/301490/title/elias_ja_s%C3%BCgaviku_saladus/</EventURL>
+      <SpokenLanguage>
+        <Name>Eesti</Name>
+        <NameInLanguage>Eesti keeles</NameInLanguage>
+        <ISOTwoLetterCode>et</ISOTwoLetterCode>
+      </SpokenLanguage>
+      <Images>
+        <EventMicroImagePortrait>http://media.forumcinemas.ee/1000/Event_8361/portrait_micro/Estinfilm_Elias-ja-sygaviku-saladus_1350x2000.jpg</EventMicroImagePortrait>
+        <EventSmallImagePortrait>http://media.forumcinemas.ee/1000/Event_8361/portrait_small/Estinfilm_Elias-ja-sygaviku-saladus_1350x2000.jpg</EventSmallImagePortrait>
+        <EventMediumImagePortrait>http://media.forumcinemas.ee/1000/Event_8361/portrait_medium/Estinfilm_Elias-ja-sygaviku-saladus_1350x2000.jpg</EventMediumImagePortrait>
+        <EventLargeImagePortrait>http://media.forumcinemas.ee/1000/Event_8361/portrait_large/Estinfilm_Elias-ja-sygaviku-saladus_1350x2000.jpg</EventLargeImagePortrait>
+        <EventSmallImageLandscape>http://media.forumcinemas.ee/1000/Event_8361/landscape_small/Estinfilm_Elias-ja-sygaviku-saladus_670x250.jpg</EventSmallImageLandscape>
+        <EventLargeImageLandscape>http://media.forumcinemas.ee/1000/Event_8361/landscape_large/Estinfilm_Elias-ja-sygaviku-saladus_670x250.jpg</EventLargeImageLandscape>
+      </Images>
+      <ContentDescriptors />
+    </Show>
+    <Show>
+      <ID>317027</ID>
+      <dtAccounting>2018-04-09T00:00:00</dtAccounting>
+      <dttmShowStart>2018-04-09T11:30:00</dttmShowStart>
+      <dttmShowStartUTC>2018-04-09T08:30:00Z</dttmShowStartUTC>
+      <dttmShowEnd>2018-04-09T13:10:00</dttmShowEnd>
+      <dttmShowEndUTC>2018-04-09T10:10:00Z</dttmShowEndUTC>
+      <ShowSalesStartTime>2000-01-01T00:00:00</ShowSalesStartTime>
+      <ShowSalesStartTimeUTC>2000-01-01T00:00:00Z</ShowSalesStartTimeUTC>
+      <ShowSalesEndTime>2018-04-09T11:00:00</ShowSalesEndTime>
+      <ShowSalesEndTimeUTC>2018-04-09T08:00:00Z</ShowSalesEndTimeUTC>
+      <ShowReservationStartTime>2000-01-01T00:00:00</ShowReservationStartTime>
+      <ShowReservationStartTimeUTC>2000-01-01T00:00:00Z</ShowReservationStartTimeUTC>
+      <ShowReservationEndTime>2018-04-08T11:30:00</ShowReservationEndTime>
+      <ShowReservationEndTimeUTC>2018-04-08T08:30:00Z</ShowReservationEndTimeUTC>
+      <EventID>301473</EventID>
+      <Title>Lino</Title>
+      <OriginalTitle>Lino</OriginalTitle>
+      <ProductionYear>2017</ProductionYear>
+      <LengthInMinutes>94</LengthInMinutes>
+      <dtLocalRelease>2018-04-06T00:00:00</dtLocalRelease>
+      <Rating>Perefilm</Rating>
+      <RatingLabel>PERE</RatingLabel>
+      <RatingImageUrl>https://media.forumcinemas.ee/images/rating_large_PERE.png</RatingImageUrl>
+      <EventType>Movie</EventType>
+      <Genres>Animatsioon</Genres>
+      <TheatreID>1001</TheatreID>
+      <TheatreAuditriumID>1012</TheatreAuditriumID>
+      <Theatre>Coca Cola Plaza</Theatre>
+      <TheatreAuditorium>Saal 9</TheatreAuditorium>
+      <TheatreAndAuditorium>Coca Cola Plaza, Saal 9</TheatreAndAuditorium>
+      <PresentationMethodAndLanguage>2D, Vene keeles</PresentationMethodAndLanguage>
+      <PresentationMethod>2D</PresentationMethod>
+      <EventSeries />
+      <ShowURL>http://www.forumcinemas.ee/websales/show/317027/</ShowURL>
+      <EventURL>http://www.forumcinemas.ee/event/301473/title/lino/</EventURL>
+      <SpokenLanguage>
+        <Name>Vene</Name>
+        <NameInLanguage>Vene keeles</NameInLanguage>
+        <ISOTwoLetterCode>ru</ISOTwoLetterCode>
+      </SpokenLanguage>
+      <Images>
+        <EventMicroImagePortrait>http://media.forumcinemas.ee/1000/Event_8341/portrait_micro/Lino_FC_1350x2000_EE.jpg</EventMicroImagePortrait>
+        <EventSmallImagePortrait>http://media.forumcinemas.ee/1000/Event_8341/portrait_small/Lino_FC_1350x2000_EE.jpg</EventSmallImagePortrait>
+        <EventMediumImagePortrait>http://media.forumcinemas.ee/1000/Event_8341/portrait_medium/Lino_FC_1350x2000_EE.jpg</EventMediumImagePortrait>
+        <EventLargeImagePortrait>http://media.forumcinemas.ee/1000/Event_8341/portrait_large/Lino_FC_1350x2000_EE.jpg</EventLargeImagePortrait>
+        <EventSmallImageLandscape>http://media.forumcinemas.ee/1000/Event_8341/landscape_small/Lino_FC_HomeCont_670x250px.jpg</EventSmallImageLandscape>
+        <EventLargeImageLandscape>http://media.forumcinemas.ee/1000/Event_8341/landscape_large/Lino_FC_HomeCont_670x250px.jpg</EventLargeImageLandscape>
+      </Images>
+      <ContentDescriptors />
+    </Show>    
+  </Shows>
+</Schedule>
