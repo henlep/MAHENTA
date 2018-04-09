@@ -15,6 +15,10 @@
           </select>          
       </div>
     
+    <div>
+        <input value.bind="selectedDate" type="date" name="selectedDate" min="${minDate}"  max="${maxDate}" change.delegate="dateChanged(selectedDate)">
+    </div>
+    
     <div class="album text-muted">
         <div class="container">
             <div class="row">
