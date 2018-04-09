@@ -10,7 +10,7 @@ export class Home {
     
     activate(){
         let client = new HttpClient();
-        client.fetch('http://localhost:8080/shows')
+        client.fetch('http://localhost:8080/showsDate?date=2018-04-09')
 			.then(response => response.json())
 			.then(shows => this.showList = shows);
         
@@ -26,6 +26,11 @@ export class Home {
         
      }
 
+    openPage(url){
+        var win = window.open(url, '_blank');
+        win.focus();
+    }
+
     clearFilter(){
     this.searchTerm = "";
     }
@@ -39,37 +44,55 @@ export class Home {
         
 	}
 
-    filterFunc(searchExpression, value, selectedCinema){
+    filterFunc(searchExpression, value){
      
      let itemValue = value.Title;
-     let itemCinema = value.Cinema
      let matches;
-     if(!searchExpression || !itemValue) return false;
-     
-     if(selectedCinema==""){
+     if(!searchExpression || !itemValue) return false;    
         
      matches = itemValue.toUpperCase().indexOf(searchExpression.toUpperCase()) !== -1 ;
-     } else {
-         
-         matches = itemValue.toUpperCase().indexOf(searchExpression.toUpperCase()) !== -1 && itemCinema==selectedCinema;
-     }
-        
+      
     
      return matches
      
   }
+
+    cinemaFunc(cinema, value){
+                
+        console.log("ss")
+        matches = value.toUpperCase().indexOf(cinema.toUpperCase()) !== -1 ;
+      
+    
+     return matches
+    }
     
     
 }
 export class FilterValueConverter {
-  toView(array, searchTerm, filterFunc, selectedCinema) {
-      console.log(selectedCinema)
-	
+  toView(array, searchTerm, filterFunc) {
     return array.filter((item) => {
 	
-	  let matches = searchTerm && searchTerm.length > 0 ? filterFunc(searchTerm,item, selectedCinema): true;
+	  let matches = searchTerm && searchTerm.length > 0 ? filterFunc(searchTerm,item): true;
 	  				
 	  return matches;
+    });
+  }
+}
+
+export class CinemaValueConverter {
+  toView(array, selectedCinema, filterFunc) {
+      console.log(selectedCinema)
+      
+    return array.filter((item) => {
+	  if (selectedCinema!=""){
+	       let matches = item.Cinema==selectedCinema;
+          return matches;
+      }else {
+          let matches = item.Cinema!="";
+          return matches;
+      }
+	  				
+	  
     });
   }
 }

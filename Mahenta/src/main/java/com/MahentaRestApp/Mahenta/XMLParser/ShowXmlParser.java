@@ -58,7 +58,7 @@ public class ShowXmlParser {
             DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
             show.showDate = LocalDateTime.parse(element.getElementsByTagName("dttmShowStart").item(0).getTextContent(), formatter).toLocalDate();
             show.showTime = LocalDateTime.parse(element.getElementsByTagName("dttmShowStart").item(0).getTextContent(), formatter).toLocalTime();
-
+            show.ShowUrl = element.getElementsByTagName("ShowURL").item(0).getTextContent();
             show.ImgUrl = images.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
 
 

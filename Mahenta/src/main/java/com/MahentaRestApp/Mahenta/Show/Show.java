@@ -22,5 +22,10 @@ public class Show {
     public LocalDate showDate;
     public LocalTime showTime;
     public String ImgUrl;
+    public String ShowUrl;
+
+    public LocalTime getShowTime(){
+        return showTime;
+    }
 
 }

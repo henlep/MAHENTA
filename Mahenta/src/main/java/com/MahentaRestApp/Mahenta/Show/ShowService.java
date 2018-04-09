@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -23,7 +24,12 @@ public class ShowService {
     }
 
     public List<Show> getShowsOnDate(LocalDate date){
-        return showRepository.findByShowDate(date);
+
+
+        List<Show> shows =  showRepository.findByShowDate(date);
+        shows.sort(Comparator.comparing(Show::getShowTime));
+        for (Show i : shows){System.out.println(i.showTime);}
+        return shows;
     }
 
     public List<String> getCinemasOnDate(LocalDate date){
