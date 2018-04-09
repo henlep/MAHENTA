@@ -4,6 +4,7 @@ body {
 
 .navbar {
   margin-bottom: 0;
+    width: 500px;
 }
 
 .jumbotron {
@@ -33,11 +34,10 @@ body {
 }
 
 .card {
-  float: left;
-  width: 32%;
+  
+  width: auto;
   padding: .75rem;
   margin-bottom: 2rem;
-  border: 0;
   margin-left: .1rem;
   margin-right: .1rem;
 }
@@ -57,4 +57,15 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+.searchbar{
+    margin-left: 15px
+}
+.mahenta{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 1px;
+    font-size: 20px;
+        
 }

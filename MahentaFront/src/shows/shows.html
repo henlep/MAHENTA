@@ -2,32 +2,40 @@
    <require from="bootstrap/css/bootstrap.css"></require>
    <require from="./album.css"></require>
   
- 
-    <input type="text" class="form-control col-md-2 search-box" value.bind="searchTerm" placeholder="search..." ></input>
-    <button class="btn btn-default col-md-2 clear-btn" if.bind="searchTerm.length > 0" click.delegate="clearFilter()"><i class="fa fa-times"></i> clear</button>
-
-
-    <div>
+    <div class="mahenta">MAHENTA</div>
+    <div class="searchbar">
         
+     <div style="display: inline">
+        <input value.bind="selectedDate" value="${minDate}" type="date" name="selectedDate" min="${minDate}"  max="${maxDate}" change.delegate="dateChanged(selectedDate)">
+    </div>
+        
+    <div style="display: inline; margin-left: 15px"> 
+        <label>vali kino:</label>
         <select name="cinema" value.bind="selectedCinema">
-            <option value="">All</option>
+            <option value="">Kõik</option>
             <option  repeat.for="cinema of cinemaList" value="${cinema}" >${cinema}</option>
           </select>          
       </div>
+ 
+    <div style="display: inline; margin-left: 15px">
+    <input type="text" class="form-control col-md-2 search-box" value.bind="searchTerm" placeholder="filmi pealkiri..."  style="display: inline"></input>
+    <button class="btn btn-default col-md-2 clear-btn" if.bind="searchTerm.length > 0" click.delegate="clearFilter()"><i class="fa fa-times"></i> clear</button>
+    </div>
+
+  
+   
     
-    <div>
-        <input value.bind="selectedDate" value="${minDate}" type="date" name="selectedDate" min="${minDate}"  max="${maxDate}" change.delegate="dateChanged(selectedDate)">
     </div>
     
     <div class="album text-muted">
         <div class="container">
             <div class="row">
                 <div class="card" repeat.for="show of showList |filter:searchTerm:filterFunc |cinema:selectedCinema:filterFunc" onclick="window.open(${show.ImgUrl})">
-                    <img data-src=${show.ImgUrl} alt="Card image cap" src="${show.ImgUrl}" > 
+                    <img data-src=${show.ImgUrl} alt="Card image cap" src="${show.ImgUrl}" style="height: inherit; width: auto"> 
                     <p class="card-text">${show.showTimeString}<br>${show.Title}<br>
                     <br>${show.Cinema}
                     <br>${show.Hall}</p>
-                    <a target="_blank" href="${show.ShowUrl}">link</a>
+                    <a target="_blank" href="${show.ShowUrl}">Vali</a>
                 </div>
             </div>
         </div>
