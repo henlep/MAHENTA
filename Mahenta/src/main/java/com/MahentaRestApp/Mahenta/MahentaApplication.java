@@ -12,6 +12,8 @@ public class MahentaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MahentaApplication.class, args);
+
+
 	}
 
 	@Bean

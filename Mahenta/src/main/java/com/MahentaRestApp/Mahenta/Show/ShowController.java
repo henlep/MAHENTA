@@ -2,15 +2,17 @@ package com.MahentaRestApp.Mahenta.Show;
 
 import com.MahentaRestApp.Mahenta.XMLParser.ShowXmlParser;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
 
 import javax.annotation.Resource;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.sql.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,23 +46,23 @@ public class ShowController {
 
 
 
-    @RequestMapping(value="/updateShows")
-       public Show UpdateShows() throws IOException, SAXException, ParserConfigurationException {
+    @Scheduled(fixedRate = 20*60*1000)
+    public void UpdateShows() throws IOException, SAXException, ParserConfigurationException {
        Show show = new Show();
        ShowXmlParser sessionsXMLParser = new ShowXmlParser();
-       List<String> datestrings = new ArrayList<>();
+       List<String> dateStrings = new ArrayList<>();
 
         DateTimeFormatter todayFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate today = LocalDate.now();
-        String todayString = today.format(todayFormatter);
-        datestrings.add(todayString);
-        LocalDate DayTwo = today.plusDays(1);
-        datestrings.add(DayTwo.format(todayFormatter));
-        LocalDate DayThree = today.plusDays(2);
-        datestrings.add(DayThree.format(todayFormatter));
+
+        for (int i = 0; i<7; i++){
+            LocalDate date = today.plusDays(i);
+            dateStrings.add(date.format(todayFormatter));
+        }
+
 
         List<String> UrlList = new ArrayList<>();
-        for (String s : datestrings){
+        for (String s : dateStrings){
             UrlList.add("https://www.forumcinemas.ee/xml/Schedule/?area=1008&dt="+s);
             UrlList.add("https://www.apollokino.ee/xml/Schedule/?area=1004&dt="+s);
         }
@@ -71,7 +73,8 @@ public class ShowController {
         for (int i = 0; i<shows.size(); i++){
             show = showService.addShow(shows.get(i));
         }
-        return shows.get(0);
+
+        System.out.println("showsUpdated");
 
 
 }}

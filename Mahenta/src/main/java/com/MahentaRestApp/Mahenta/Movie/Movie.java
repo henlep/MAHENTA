@@ -2,10 +2,10 @@ package com.MahentaRestApp.Mahenta.Movie;
 
 
 
-import com.MahentaRestApp.Mahenta.Session.Session;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Movie {

@@ -3,7 +3,7 @@ package com.MahentaRestApp.Mahenta.Show;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -28,6 +28,19 @@ public class ShowService {
 
         List<Show> shows =  showRepository.findByShowDate(date);
         shows.sort(Comparator.comparing(Show::getShowTime));
+
+
+
+        if (date.equals( LocalDate.now())){
+            List<Show> notStartedShows = new ArrayList<>();
+            for (Show s : shows){
+                if (s.showTime.isAfter(LocalTime.now()) ){
+                    notStartedShows.add(s);
+                }
+            }
+            shows = notStartedShows;
+        }
+
         return shows;
     }
 

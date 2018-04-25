@@ -19,7 +19,7 @@ export class Home {
         this.minDate=dateS
         
         var maxDay = new Date();        
-        maxDay = new Date(maxDay.getTime()+(2*24*60*60*1000)).toISOString();
+        maxDay = new Date(maxDay.getTime()+(6*24*60*60*1000)).toISOString();
         var maxS = maxDay.substring(0,10);
         this.maxDate = maxS;
         
