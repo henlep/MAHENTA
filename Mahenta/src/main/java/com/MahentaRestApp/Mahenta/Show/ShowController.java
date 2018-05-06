@@ -3,6 +3,7 @@ package com.MahentaRestApp.Mahenta.Show;
 import com.MahentaRestApp.Mahenta.XMLParser.ShowXmlParser;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,12 +46,20 @@ public class ShowController {
     }
 
 
+    @Transactional
+    @RequestMapping(value="/deleteshows", method = RequestMethod.DELETE)
+    public void delete(){
+        showService.deleteOldShows();
+    }
 
+    @Transactional
     @Scheduled(fixedRate = 20*60*1000)
     public void UpdateShows() throws IOException, SAXException, ParserConfigurationException {
-       Show show = new Show();
-       ShowXmlParser sessionsXMLParser = new ShowXmlParser();
-       List<String> dateStrings = new ArrayList<>();
+
+        showService.deleteOldShows();
+        Show show = new Show();
+        ShowXmlParser sessionsXMLParser = new ShowXmlParser();
+        List<String> dateStrings = new ArrayList<>();
 
         DateTimeFormatter todayFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate today = LocalDate.now();

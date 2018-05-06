@@ -23,6 +23,10 @@ public class ShowService {
         return showRepository.findAll();
     }
 
+    public void deleteOldShows(){
+        showRepository.deleteByShowDateBefore(LocalDate.now());
+    }
+
     public List<Show> getShowsOnDate(LocalDate date){
 
 
