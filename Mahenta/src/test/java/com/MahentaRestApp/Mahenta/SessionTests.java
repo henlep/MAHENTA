@@ -18,7 +18,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class MovieTests {
+class MovieTests {
     @Mock
     private MovieRepository movieRepository;
     Movie movie = new Movie();
