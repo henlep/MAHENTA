@@ -57,5 +57,19 @@ class MovieTests {
     public void getMoviesTest() {
         Assert.assertEquals(movie, movieRepository.findAll());
     }
+    @Test
+    public void MovieIdTest() {
+        List<Movie> movieList = new ArrayList<>();
+
+
+        Movie firstMovie = new Movie();
+        firstMovie.id = 1;
+
+
+        MovieRepository repository = mock(MovieRepository.class);
+        MovieService service = new MovieService(repository);
+        Movie mov1 = service.getMovieById(1);
+        assertEquals(mov1, firstMovie);
+    }
     
 }
