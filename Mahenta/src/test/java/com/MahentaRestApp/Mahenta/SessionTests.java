@@ -1,8 +1,8 @@
 package com.MahentaRestApp.Mahenta;
 
-import com.MahentaRestApp.Mahenta.Session.Session;
-import com.MahentaRestApp.Mahenta.Session.SessionRepository;
-import com.MahentaRestApp.Mahenta.Session.SessionService;
+import com.MahentaRestApp.Mahenta.Movie.Movie;
+import com.MahentaRestApp.Mahenta.Movie.MovieRepository;
+import com.MahentaRestApp.Mahenta.Movie.MovieService;
 import com.MahentaRestApp.Mahenta.Show.Show;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,48 +18,44 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class SessionTests {
+public class MovieTests {
     @Mock
-    private SessionRepository sessionRepository;
-    Session session = new Session();
+    private MovieRepository movieRepository;
+    Movie movie = new Movie();
     @Test
-    public void SessionTest() {
-        List<Session> sessionList = new ArrayList<>();
+    public void MovieTest() {
+        List<Movie> movieList = new ArrayList<>();
 
 
-        Session firstSession = new Session();
-        firstSession.Cinema = "Forum";
-        firstSession.CinemaHall = "3D";
-        firstSession.FreeSeats = 24;
-        firstSession.Date = LocalDate.now();
-        firstSession.movie_id = 1;
-        firstSession.id = 2;
-        sessionList.add(firstSession);
+        Movie firstMovie = new Movie();
+        firstMovie.Description = "blabla";
+        firstMovie.id = 1;
+        firstMovie.Title = "endex";
+        firstMovie.Year=2015;
+        movieList.add(firstMovie);
 
-        SessionRepository repository = mock(SessionRepository.class);
-        SessionService service = new SessionService(repository);
-        when(repository.findAll(any())).thenReturn(sessionList);
+        MovieRepository repository = mock(MovieRepository.class);
+        MovieService service = new MovieService(repository);
+        when(repository.findAll(any())).thenReturn(movieList);
     }
     @Before
     public void setUp() {
-        session.id=1;
-        session.Date= LocalDate.now();
-        session.FreeSeats = 55;
-        session.Cinema = "plaza";
-        session.movie_id = 1;
-        session.id=4;
+        movie.Description = "blabla211212";
+        movie.id = 12;
+        movie.Title = "endex123";
+        movie.Year=2011;
     }
 
         @Test
 
-        public void addSession() {
+        public void addMovie() {
 
-            Assert.assertEquals(session, sessionRepository.save(session));
+            Assert.assertEquals(movie, movieRepository.save(movie));
 
     }
     @Test
-    public void getSessionsTest() {
-        Assert.assertEquals(session, sessionRepository.findAll());
+    public void getMoviesTest() {
+        Assert.assertEquals(movie, movieRepository.findAll());
     }
     
 }
