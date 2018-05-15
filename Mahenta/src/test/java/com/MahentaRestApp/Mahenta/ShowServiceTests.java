@@ -107,4 +107,25 @@ public class ShowServiceTests {
 
 
     }
+    @Test
+    public void DeleteShowsOnDateTest(){
+        List<Show> showList = new ArrayList<>();
+        Show firstShow = new Show();
+        firstShow.showTimeString = "12:00";
+        firstShow.showTime = LocalTime.now();
+        firstShow.ShowUrl = "URL1";
+        firstShow.id = 132;
+        firstShow.Cinema="Plaza";
+        showList.add(firstShow);
+
+        ShowRepository repository = mock(ShowRepository.class);
+        ShowService service = new ShowService(repository);
+
+        repository.deleteByShowDateBefore(LocalDate.now());
+        assertTrue(repository.findAll().isEmpty());
+
+
+
+
+    }
 }
